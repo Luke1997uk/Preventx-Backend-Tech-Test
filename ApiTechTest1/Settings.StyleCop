@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiTechTest1.Api</name>
+    </assembly>
+    <members>
+        <member name="T:ApiTechTest1.Api.Controllers.ZooController">
+            <summary>
+            Controller for getting zoo animals.
+            </summary>
+        </member>
+        <member name="M:ApiTechTest1.Api.Controllers.ZooController.#ctor(ApiTechTest1.Api.Services.IAnimalService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ApiTechTest1.Api.Controllers.ZooController"/> class.
+            </summary>
+            <param name="animalService">The animal service.</param>
+        </member>
+        <member name="M:ApiTechTest1.Api.Controllers.ZooController.GetAnimalAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Gets the animal asynchronous.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTechTest1.Api.Controllers.ZooController.ListAnimalsAsync(ApiTechTest1.Api.Services.ListAnimalsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists the animals asynchronous.
+            </summary>
+            <param name="listAnimalsRequest">The list animals request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiTechTest1.Api.Exceptions.IdOutOfRangeException">
+            <summary>
+            Exception for invalid Ids.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:ApiTechTest1.Api.Exceptions.IdOutOfRangeException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ApiTechTest1.Api.Exceptions.IdOutOfRangeException"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:ApiTechTest1.Api.Exceptions.IdOutOfRangeException.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+        </member>
+        <member name="T:ApiTechTest1.Api.Services.AnimalService">
+            <summary>
+            Service for interacting with Animals.
+            </summary>
+            <seealso cref="T:ApiTechTest1.Api.Services.IAnimalService" />
+        </member>
+        <member name="M:ApiTechTest1.Api.Services.AnimalService.#ctor(ApiTechTest1.Infrastructure.Repositories.IAnimalRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ApiTechTest1.Api.Services.AnimalService"/> class.
+            </summary>
+            <param name="animalRepository">The animal repository.</param>
+        </member>
+        <member name="M:ApiTechTest1.Api.Services.AnimalService.GetAnimalAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Gets the animal asynchronous.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTechTest1.Api.Services.AnimalService.ListAnimalsAsync(ApiTechTest1.Api.Services.ListAnimalsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists the animal asynchronous.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiTechTest1.Api.Services.IAnimalService">
+            <summary>
+            Interface for interacting with Animals.
+            </summary>
+        </member>
+        <member name="M:ApiTechTest1.Api.Services.IAnimalService.GetAnimalAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Gets the animal asynchronous.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTechTest1.Api.Services.IAnimalService.ListAnimalsAsync(ApiTechTest1.Api.Services.ListAnimalsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists the animal asynchronous.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiTechTest1.Api.Services.ListAnimalsRequest">
+            <summary>
+            Request object for ListAnimals.
+            </summary>
+        </member>
+        <member name="P:ApiTechTest1.Api.Services.ListAnimalsRequest.SearchString">
+            <summary>
+            Gets the search string.
+            </summary>
+        </member>
+        <member name="P:ApiTechTest1.Api.Services.ListAnimalsRequest.OrderBy">
+            <summary>
+            Gets the order by.
+            </summary>
+        </member>
+    </members>
+</doc>
