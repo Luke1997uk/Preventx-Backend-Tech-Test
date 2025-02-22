@@ -13,6 +13,7 @@
         /// </summary>
         /// <param name="id">The identifier.</param>
         public IdOutOfRangeException(int id)
+            : base($"Number out of range: {id}")
         {
             Id = id;
         }

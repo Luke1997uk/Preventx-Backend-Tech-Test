@@ -33,7 +33,7 @@
         /// <param name="id">The identifier.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        [HttpGet("/GetResult")]
+        [HttpGet("/GetResult/{id}")]
         public async Task<Result> GetResultAsync([FromRoute] int id, CancellationToken cancellationToken)
         {
             return await _resultService.GetResultAsync(id, cancellationToken);
@@ -45,8 +45,8 @@
         /// <param name="listResultsRequest">The list Results request.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        [HttpGet("/ListResults")]
-        public async Task<IEnumerable<Result>> ListResultsAsync([FromQuery] ListResultsRequest listResultsRequest, CancellationToken cancellationToken)
+        [HttpPost("/ListResults")]
+        public async Task<IEnumerable<Result>> ListResultsAsync([FromBody] ListResultsRequest listResultsRequest, CancellationToken cancellationToken)
         {
             return await _resultService.ListResultsAsync(listResultsRequest, cancellationToken);
         }

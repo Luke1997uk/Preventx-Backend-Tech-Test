@@ -1,5 +1,6 @@
 ﻿namespace ApiTechTest1.Api.UnitTests.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
@@ -74,10 +75,11 @@
             var testObject = GetResultService();
 
             // Act
-            var result = await Assert.ThrowsAsync<IdOutOfRangeException>(() => testObject.GetResultAsync(id, cancellationToken));
+            var exception = await Assert.ThrowsAsync<IdOutOfRangeException>(() => testObject.GetResultAsync(id, cancellationToken));
 
             // Assert
-            expectedResult.Should().BeEquivalentTo(result);
+            Assert.Equal(id, exception.Id);
+            Assert.Equal($"Number out of range: {id}", exception.Message);
         }
 
         private static IEnumerable<Result> GetResults()
